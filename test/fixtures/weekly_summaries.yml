@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  week_start_date: 2025-04-25
+  total_points: 1
+  reward_claimed: false
+  user: one
+
+two:
+  week_start_date: 2025-04-25
+  total_points: 1
+  reward_claimed: false
+  user: two
