@@ -19,4 +19,9 @@ class TaskController < ApplicationController
       render :new
     end
   end
+
+  def toggle
+    @task.update(completed: !@task.completed)
+    redirect_to tasks_path
+  end
 end
