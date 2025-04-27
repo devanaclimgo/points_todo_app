@@ -24,4 +24,8 @@ class TaskController < ApplicationController
     @task.update(completed: !@task.completed)
     redirect_to tasks_path
   end
+
+  private
+
+  
 end
