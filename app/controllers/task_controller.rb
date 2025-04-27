@@ -6,4 +6,8 @@ class TaskController < ApplicationController
     @completed_tasks = current_user.tasks.where(completed: true)
     @total_points = current_user.tasks.where(completed: true).sum(:points)
   end
+
+  def new
+    @task = Task.new
+  end
 end
