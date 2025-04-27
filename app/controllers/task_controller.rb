@@ -31,4 +31,8 @@ class TaskController < ApplicationController
     @task.destroy
     redirect_to tasks_path
   end
+
+  def task_params
+    params.require(:task).permit(:name, :points, :due_date, :repeat_days)
+  end
 end
