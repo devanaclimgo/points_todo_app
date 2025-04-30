@@ -33,4 +33,8 @@ class RewardsController < ApplicationController
   def set_reward
     @reward = Reward.find(params[:id])
   end
+
+  def reward_params
+    params.require(:reward).permit(:name, :points_required)
+  end
 end
