@@ -9,4 +9,17 @@ class RewardsController < ApplicationController
   def new
     @reward = Reward.new
   end
+
+  def create
+    @reward = current_user.rewards.new(reward_params)
+
+    if @reward.points_required < min_reasonable_points
+      @reward.errors.add(:points_required, "must be at least #{min_reasonable_points} to be challenging")
+      render :new
+    elsif @reward.save
+      redirect_to rewards_path, notice: 'Reward was successfully created'
+    else
+      render :new
+    end
+  end
 end
