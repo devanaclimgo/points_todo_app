@@ -29,4 +29,8 @@ class RewardsController < ApplicationController
     total_possible_points = current_user.tasks.sum(:points)
     (total_possible_points * 0.7).ceil
   end
+
+  def set_reward
+    @reward = Reward.find(params[:id])
+  end
 end
