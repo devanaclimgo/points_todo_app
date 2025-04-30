@@ -22,4 +22,11 @@ class RewardsController < ApplicationController
       render :new
     end
   end
+
+  private
+
+  def calculate_min_reward_points
+    total_possible_points = current_user.tasks.sum(:points)
+    (total_possible_points * 0.7).ceil
+  end
 end
